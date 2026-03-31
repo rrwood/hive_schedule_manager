@@ -1,0 +1,57 @@
+set_day_schedule:
+  name: Set Day Schedule
+  description: Update heating schedule for a specific day of the week
+  fields:
+    node_id:
+      name: Node ID
+      description: The thermostat node ID (found in Hive web app URL)
+      required: true
+      example: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+      selector:
+        text:
+    day:
+      name: Day
+      description: Day of the week to update
+      required: true
+      example: "monday"
+      selector:
+        select:
+          options:
+            - "monday"
+            - "tuesday"
+            - "wednesday"
+            - "thursday"
+            - "friday"
+            - "saturday"
+            - "sunday"
+    profile:
+      name: Profile
+      description: Pre-defined schedule profile to use
+      required: false
+      example: "workday"
+      selector:
+        select:
+          options:
+            - "workday"
+            - "weekend"
+            - "nonworkday"
+            - "holiday"
+            - "all_day_comfort"
+            - "wfh"
+            - "custom1"
+            - "custom2"
+    schedule:
+      name: Custom Schedule
+      description: Custom schedule (alternative to profile)
+      required: false
+      example:
+        - time: "06:00"
+          temp: 19.0
+        - time: "22:00"
+          temp: 16.0
+      selector:
+        object:
+
+refresh_token:
+  name: Refresh Token
+  description: Manually refresh authentication tokens (normally done automatically)

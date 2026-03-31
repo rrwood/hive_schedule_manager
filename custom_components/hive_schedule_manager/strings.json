@@ -1,0 +1,45 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Hive Schedule Manager",
+        "description": "Enter your Hive account credentials",
+        "data": {
+          "email": "Email",
+          "password": "Password"
+        }
+      },
+      "mfa": {
+        "title": "Two-Factor Authentication",
+        "description": "Enter the verification code sent to your phone",
+        "data": {
+          "mfa_code": "Verification Code"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid email or password",
+      "invalid_mfa": "Invalid verification code",
+      "cannot_connect": "Failed to connect to Hive",
+      "unknown": "Unexpected error occurred"
+    },
+    "abort": {
+      "already_configured": "This account is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Hive Schedule Manager Options",
+        "description": "**Emergency override fields** — under normal operation these are set automatically during setup and do not need to be changed. Use only if automatic token refresh has stopped working.",
+        "data": {
+          "home_id": "Home ID",
+          "device_key": "Device Key (emergency override)",
+          "device_group_key": "Device Group Key (emergency override)",
+          "device_password": "Device Password (emergency override)",
+          "refresh_token": "Refresh Token (emergency override)"
+        }
+      }
+    }
+  }
+}
