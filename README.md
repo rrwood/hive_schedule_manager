@@ -10,6 +10,7 @@ A Home Assistant custom integration for managing Hive UK heating schedules. Set 
 - Automatic token refresh — enter your MFA code once during setup, never again
 - Set heating schedules per day via HA service calls
 - 8 built-in schedule profiles (workday, weekend, WFH, holiday, etc.)
+- Profiles loaded from `hive_schedule_profiles.yaml` at runtime — edits take effect without restart (file is auto-created on first run)
 - Custom time/temperature schedule support
 - HACS compatible
 
@@ -67,6 +68,12 @@ data:
 ### `hive_schedule_manager.refresh_token`
 
 Manually trigger a token refresh (normally automatic).
+
+## Schedule Profiles File
+
+Profiles are loaded from `hive_schedule_profiles.yaml` in your Home Assistant config directory at runtime. On first load, if the file does not exist it is created automatically by seeding it from the built-in defaults. Once the file exists it is read on every `set_day_schedule` call, so edits take effect immediately without restarting Home Assistant.
+
+The seasonal toggle (`input_boolean.heating_winter_summer`) controls which profile set is active by copying `hive_schedule_profiles_winter.yaml` or `hive_schedule_profiles_summer.yaml` over `hive_schedule_profiles.yaml` via the `"Heating: Sync Seasonal Profiles"` automation.
 
 ## Finding Your Node ID
 
