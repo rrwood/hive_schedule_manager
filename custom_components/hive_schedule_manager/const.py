@@ -30,6 +30,9 @@ CONF_DEVICE_PASSWORD = "device_password"
 SERVICE_SET_DAY_SCHEDULE = "set_day_schedule"
 SERVICE_REFRESH_TOKEN = "refresh_token"
 
+# Schedule profiles file (read at runtime, seeded from DEFAULT_PROFILES if missing)
+PROFILES_FILE = "hive_schedule_profiles.yaml"
+
 # Days of week mapping
 DAYS_OF_WEEK = {
     "monday": 1,
